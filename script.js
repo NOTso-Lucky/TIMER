@@ -125,7 +125,7 @@ const welcomeMessage=document.getElementById("welcome-message");
 // });
 diveBtn.addEventListener("click",handleDiveIn);
 
-nameInput.addEventListener("keydown",(event)=>{
+nameInput.addEventListener("keyup",(event)=>{
     if(event.key==="Enter"){
         handleDiveIn();
     }
@@ -151,5 +151,6 @@ function handleDiveIn(){
         
     },2000)
 }
+
 
 
