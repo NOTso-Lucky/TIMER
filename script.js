@@ -99,27 +99,55 @@ const nameInput=document.getElementById("name-input");
 const welcomeMessage=document.getElementById("welcome-message");
 
 
-diveBtn.addEventListener("click",()=>{
+// diveBtn.addEventListener("click",()=>{
     
-    username=nameInput.value.trim();
+//     username=nameInput.value.trim();
+
+//     if(username===""){
+//         username="Dukhiyare";
+//     }
+
+//     welcomeMessage.textContent=`Welcome,${username}!!🎉`;
+//     introScreen.classList.remove("visible");
+//     introScreen.classList.add("hidden");
+
+
+//     setTimeout(()=>{
+//         introScreen.style.display="none";
+//         app.style.display="block";
+//         app.classList.add("visible");
+//     },2000);
+    
+    
+    
+    
+    
+// });
+diveBtn.addEventListener("click",handleDiveIn);
+
+nameInput.addEventListener("keypress",(event)=>{
+    if(event.key==="Enter"){
+        handleDiveIn();
+    }
+});
+
+function handleDiveIn(){
+    let username=nameInput.value.trim();
 
     if(username===""){
-        username="Dukhiyare";
+        username="DUKHIYARE";
     }
 
-    welcomeMessage.textContent=`Welcome,${username}!!🎉`;
+    welcomeMessage.textContent=`Welcome, ${username}!!🎉`;
     introScreen.classList.remove("visible");
     introScreen.classList.add("hidden");
-
 
     setTimeout(()=>{
         introScreen.style.display="none";
         app.style.display="block";
-        app.classList.add("visible");
-    },2000);
-    
-    
-    
-    
-    
-});
+        setTimeout(()=>{
+            app.classList.add("visible");
+        },50)
+        
+    },2000)
+}
