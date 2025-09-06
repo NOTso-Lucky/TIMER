@@ -132,7 +132,7 @@ nameInput.addEventListener("keypress",(event)=>{
 });
 
 function handleDiveIn(){
-    let username=nameInput.value.trim();
+    username=nameInput.value.trim();
 
     if(username===""){
         username="DUKHIYARE";
@@ -151,3 +151,4 @@ function handleDiveIn(){
         
     },2000)
 }
+
