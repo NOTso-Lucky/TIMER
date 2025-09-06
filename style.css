@@ -2,6 +2,7 @@
 body{
     background: url(bg_image.jpg);
     background-size: cover;
+    background-position: center;
     color: #EAEAEA;;
     display: flex;
     justify-content: center;
@@ -54,14 +55,22 @@ body{
 }
 
 .container{
-    width: 100%;
+    width: 90%;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
     padding: 20px;
-    max-width: 800px;
-    margin: 0;
+    max-width: 600px;
+    margin: auto;
+
+
 
 }
+#timer span{
+    font-size: 2em;
+}
+
+
+
 h2{
     font-size: 2em;
     margin-bottom: 1em;
@@ -84,7 +93,7 @@ h3{
     text-align: center;
     padding: 30px;
     background: #FAFAFA ;
-    border-radius: 50%;
+    border-radius: 40%;
     color: black;
     display: flex;
     flex-direction: column;
@@ -115,19 +124,32 @@ span{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    background-color: #F5CAC3;
+    min-height: 50vh;
+    padding: 20px;
+    background-color:#AFAFDCA3 ;
     border-radius: 30px;
     text-align: center;
-    width: 80vh;
+    max-width: 90%;
+    box-sizing: border-box;
     gap: 20px;
     animation: fadeIn 2s ease-in-out;
+    
+
 
 }
-@keyframes fadeIn{
-    from{ opacity: 0;}
-    to{ opacity: 1;}    
+@keyframes fadeIn {
+    from {opacity: 0;}
+
+    to{opacity: 1;}
+    
 }
+#welcome-message{
+    font-size: 2em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
 #intro-screen p{
     font-size: 1.5em;
 
@@ -160,9 +182,47 @@ span{
 .hidden{
     opacity: 0;
     pointer-events:none;
-    transition: opacity 2s ease;
+    transition: opacity 3s ease-in-out;
 }
 .visible{
     opacity: 1;
-    transition: opacity 2s ease;
+    transition: opacity 4s ease;
+}
+#app{
+    opacity: 0;
+    display: none;
+    transition: opacity 1s ease;
+}
+#app.visible{
+    display: block;
+    opacity: 1;
+}
+@media (max-width:600px){
+    body{
+        flex-direction: column;
+        padding: 10px;
+        background-size: auto 100%;
+        background-position: center;
+    }
+    #set-timer{
+        flex-direction: column;
+        gap:5px;
+        align-items: center;
+    }
+    #set-timer input{
+        width:100%;
+        
+        max-width: 200px;
+    }
+    #timer{
+        flex-wrap: wrap;
+    }
+    #timer div{
+        padding: 15px;
+        border-radius: 15px;
+    }
+    h1{
+        font-size: 2em;
+    }
+    
 }
